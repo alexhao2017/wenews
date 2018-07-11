@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#1FBCEC",
+    "navigationBarTitleText": "快读・咨询",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  
+  }
+}

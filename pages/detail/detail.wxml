@@ -1,0 +1,27 @@
+<!--pages/detail/detail.wxml-->
+
+<view>
+<view class='title'>{{title}}</view>
+
+<view class='source'>{{source}}</view>
+<view class='date-read'>
+<view>{{date}}</view>
+
+<view class='read'>已阅读：{{readcount}}次</view>
+</view>
+</view>
+<view>
+<view wx:for='{{content}}'wx:key=''>
+<block wx:if='{{item.type=="p"}}'>
+<view class='p'>{{item.text}}</view>
+</block>
+<block wx:elif='{{item.type=="image"}}'>
+<image src='{{item.src}}'class='img'></image>
+</block>
+<block wx:elif='{{item.type=="strong"}}'>
+<p class='strong'>{{item.text}}</p>
+</block>
+
+</view>
+</view>
+

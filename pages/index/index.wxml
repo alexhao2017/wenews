@@ -1,0 +1,22 @@
+
+<view class='news-title-cat'>
+<view  wx:for='{{newscat}}' wx:key='{{item.id}}'>
+<view class="{{item.id==id?'sel':'news-title-cat-i'}}" bindtap='onTapCat' data-no='{{item.id}}'>{{item.text}}</view>
+</view>
+
+</view>
+<view class='hot' bindtap='onTapNews' data-no='{{hot.id}}'>
+<view class='hot-title'><span class='hot-span'>{{hot.title}}</span></view>
+<image class='hot-bg' src='{{hot.firstImage}}'></image>
+</view>
+<view wx:for='{{news}}' wx:key='{{news.id}}'>
+<view class='news-list-block' bindtap='onTapNews' data-no='{{item.id}}'>
+<view class='news-img-bl'>
+<image class='news-img' 
+src='{{item.firstImage}}'></image>
+</view>
+<view class='news'>{{item.title}}</view>
+<view class='news-info'>{{item.date}}</view>
+<view class='news-src'>{{item.source}}</view>
+</view>
+</view>
