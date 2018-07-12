@@ -53,12 +53,16 @@ onPullDownRefresh(){
   
   )
 },
+formalInfo(obj){
+  obj.date = obj.date.slice(0, 10) + ' ' + obj.date.slice(11, 19);
+  obj.source ? obj.source : obj.source = '网络消息';
+  obj.firstImage ? obj.firstImage : 'https://pic3.zhimg.com/80/v2-abc532a979acb0411d0c2579c8ec92ee_hd.jpg'
+}
+,
  onLoad(){  
    this.getNews('gn',false, res => {
      res.data.result.forEach(obj => {
-     obj.date = obj.date.slice(0, 10) + ' ' + obj.date.slice(11, 19);
-     obj.source ? obj.source : obj.source = '网络消息';
-     obj.firstImage ? obj.firstImage :         'https://pic3.zhimg.com/80/v2-abc532a979acb0411d0c2579c8ec92ee_hd.jpg'
+     this.formalInfo(obj)
       });    
      this.setData({
        hot: res.data.result[0],
@@ -70,9 +74,7 @@ onPullDownRefresh(){
 onTapCat(e) {
     let id = String(e.currentTarget.dataset.no);
     this.getNews(id, false, res => {
-      res.data.result.forEach(obj => { obj.date = obj.date.slice(0, 10) + ' ' + obj.date.slice         (11, 19);
-       obj.source ? obj.source : obj.source = '网络消息';
-     obj.firstImage ? obj.firstImage :         'https://pic3.zhimg.com/80/v2-abc532a979acb0411d0c2579c8ec92ee_hd.jpg' })
+      res.data.result.forEach(obj => { this.formalInfo(obj) })
       this.setData({
         hot: res.data.result[0],
         news: res.data.result.slice(1),
