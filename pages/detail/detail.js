@@ -9,10 +9,11 @@ Page({
      },
      success: res => {
        let result = res.data.result
+       let srcstd="网络消息"
        console.log(res.data.result)
        this.setData({
          title: result.title,
-         source:result.source,
+         source: result.source?result.source:srcstd,
          date: result.date.slice(0, 10) + ' ' + result.date.slice(11, 19),
          readcount:result.readCount,
          content:result.content

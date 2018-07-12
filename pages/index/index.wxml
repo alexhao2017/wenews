@@ -7,13 +7,13 @@
 </view>
 <view class='hot' bindtap='onTapNews' data-no='{{hot.id}}'>
 <view class='hot-title'><span class='hot-span'>{{hot.title}}</span></view>
-<image class='hot-bg' src='{{hot.firstImage}}'></image>
+<image class='hot-bg' src='{{hot.firstImage}}' mode='aspectFill'></image>
 </view>
 <view wx:for='{{news}}' wx:key='{{news.id}}'>
 <view class='news-list-block' bindtap='onTapNews' data-no='{{item.id}}'>
 <view class='news-img-bl'>
 <image class='news-img' 
-src='{{item.firstImage}}'></image>
+src="{{item.firstImage}}"></image>
 </view>
 <view class='news'>{{item.title}}</view>
 <view class='news-info'>{{item.date}}</view>
